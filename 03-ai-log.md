@@ -1,6 +1,6 @@
 # 03 - AI Log (Personal Reflection)
 
-Name: Nguyễn Quang Huy
+Name: [Your Name]
 
 ## AI helped with
 - Brainstorming Quick Cards and structure for deep-dive
