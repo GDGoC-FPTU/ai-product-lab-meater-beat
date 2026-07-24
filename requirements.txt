@@ -1,2 +1,6 @@
 # Environment Dependencies
 # List all required python packages here.
+openai>=1.40.0
+tiktoken>=0.7.0
+pytest>=8.0.0
+python-dotenv>=1.0.0
