@@ -1,0 +1,49 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1385 >>
+stream
+BT
+/F1 16 Tf
+72 740 Td
+(Xanh SM - Current-State Workflow) Tj
+/F1 11 Tf
+0 -32 Td
+(1. Driver reports battery incident - 2 min) Tj
+0 -22 Td
+(        HANDOFF: driver -> dispatcher) Tj
+0 -32 Td
+(2. Dispatcher looks up vehicle GPS - 2 min) Tj
+0 -22 Td
+(        HANDOFF: dispatcher -> map dashboard) Tj
+0 -32 Td
+(3. Search available compatible charging station - 5 min) Tj
+0 -22 Td
+(        BOTTLENECK: wrong connector or stale availability) Tj
+0 -32 Td
+(4. Write route guidance SMS - 5 min) Tj
+0 -22 Td
+(        BOTTLENECK: manual lookup and composition) Tj
+0 -32 Td
+(5. Call mobile rescue if required - 1 min) Tj
+0 -32 Td
+(TOTAL MANUAL PROCESS: 15 minutes per incident) Tj
+0 -40 Td
+(Legend: HANDOFF = information transfer; BOTTLENECK = slow/error-prone step) Tj
+ET
+endstream
+endobj
+trailer
+<< /Root 1 0 R >>
+%%EOF
