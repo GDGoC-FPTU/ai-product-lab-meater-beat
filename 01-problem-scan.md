@@ -1,6 +1,6 @@
 # 01 - Problem Scan (Personal)
 
-Author: [Your Name] - MSSV: [Your ID]
+Author: Nguyễn Quang Huy - MSSV: 2A202601873
 
 ## Scan Table (5 opportunities)
 1. VF Service Queue Management — Lặp lại / Tốn thời gian

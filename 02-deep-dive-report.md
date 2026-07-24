@@ -1,10 +1,8 @@
 # 02 - Deep Dive Report (Group)
 
-Group Name: [GroupName]
+Group Name: meater beat
 Members:
-- Name A - MSSV: ...
-- Name B - MSSV: ...
-- Name C - MSSV: ...
+- Nguyễn Quang Huy - MSSV: 2A202601873
 
 ## Selected Problem
 EV Emergency Charging Dispatch
