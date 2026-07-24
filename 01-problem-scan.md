@@ -1,57 +1,116 @@
-# 01 - Problem Scan
+# Lab 02 — Worksheet: AI Product Scoping (Vin Smart Future)
 
-## Phase 1 - SCAN: Bang quet co hoi
+---
 
-| # | Subsidiary | Lens | Mo ta ngan bai toan |
-|---|---|---|---|
-| 1 | Xanh SM | Ton thoi gian | Dieu phoi vien xu ly thu cong cac truong hop xe dien con pin thap, tai xe bao sap het pin va can quyet dinh tram sac gan nhat hay xe sac pin di dong. |
-| 2 | Xanh SM | Stakeholder Pain | Tai xe phan nan goi tong dai khi sap het pin phai cho dieu phoi vien tra cuu nhieu he thong, dan den cham ho tro va co nguy co xe nam duong. |
-| 3 | VinFast | Lap lai | Doi soat hoa don sac dien tu tram sac doi tac voi log sac thuc te theo tung xe, tung thoi diem va tung ma giao dich. |
-| 4 | Vinhomes | AI-upgrade | Phan loai phan anh cu dan tren app Vinhomes Resident va draft phan hoi ban dau theo dung ban quan ly, muc do khan cap va SLA. |
-| 5 | Vinmec | Ton thoi gian | Bac si mat 20-30 phut de tong hop benh an, ket qua xet nghiem va loi dan thanh ban tom tat xuat vien de benh nhan de hieu. |
-| 6 | Vinpearl | Pain tu nguoi khac | Quan ly khach san phai doc review tren nhieu kenh de loc phan nan khan cap ve phong, thai do nhan vien va dich vu. |
+## 🔍 Phase 1 — SCAN: Tìm kiếm cơ hội (Cá nhân)
 
-## Phase 2 - QUICK-ASSESS: 3 Quick Problem Cards
+Dưới đây là bảng quét cơ hội vận hành tại các công ty thành viên thuộc tập đoàn Vingroup dựa trên **4 Lenses** (Lặp lại, Tốn thời gian, AI-upgrade, Stakeholder Pain) nhằm xác định các điểm nghẽn có thể tối ưu hóa bằng AI.
 
-### Card 1 - Xanh SM: Xu ly xe pin thap / su co sac pin
+### Bảng quét cơ hội (SCAN Table):
+| # | Subsidiary | Lens | Mô tả ngắn bài toán / Bottleneck thực tế |
+|---|------------|------|------------------------------------------|
+| 1 | **Vinmec** | Tốn thời gian | Bác sĩ mất quá nhiều thời gian tổng hợp hồ sơ và viết tóm tắt xuất viện bằng ngôn ngữ thông thường cho bệnh nhân khi ra viện (mất 20-30 phút/bệnh nhân). |
+| 2 | **VinFast** | AI-upgrade | Khách hàng mô tả lỗi xe bằng tiếng Việt phi cấu trúc ("đi qua gờ kêu cụp cụp", "lúc lùi cam bị sọc"), kỹ thuật viên tốn thời gian tra cứu đối chiếu sang mã lỗi kỹ thuật (DTC/OBD). |
+| 3 | **Vinpearl** | Tốn thời gian | Nhân viên phòng đặt phòng (Reservation Agent) đọc thủ công các email đặt phòng theo đoàn (Group Booking) phức tạp từ công ty lữ hành rồi nhập tay từng thông tin vào phần mềm PMS Opera. |
+| 4 | **Vinhomes** | Lặp lại | Nhân viên CSKH đọc thủ công hàng trăm phản ánh, khiếu nại của cư dân trên App Vinhomes Resident để phân loại và điều hướng về đúng Ban quản lý tòa nhà/bộ phận kỹ thuật. |
+| 5 | **Xanh SM** | Pain từ người khác | Chuyên viên phân tích vận hành phải nghe thủ công file ghi âm cuộc gọi hủy chuyến và đọc ghi chú tài xế để tóm tắt, tìm ra pattern lỗi hệ thống hoặc hành vi tài xế khiến khách hủy chuyến. |
+| 6 | **VinFast** | Lặp lại | So khớp hóa đơn sạc điện hàng tuần từ các đối tác trạm sạc liên kết ngoài với dữ liệu sạc điện ghi nhận trên hệ thống backend của VinFast. |
 
-| Truong | Noi dung |
-|---|---|
-| Bai toan | Tai xe Xanh SM bao xe con pin thap, dieu phoi vien can quyet dinh nhanh: di toi tram sac gan nhat hay dieu xe sac pin di dong. |
-| Cong ty thanh vien | Xanh SM |
-| Actor / Operator | Dieu phoi vien trung tam van hanh, tai xe dang cho ho tro. |
-| Workflow thu cong hien tai | 1. Tai xe goi tong dai bao pin va vi tri. -> 2. Dieu phoi vien mo ban do noi bo de xac dinh toa do. -> 3. Mo dashboard tram sac de xem khoang cach va tinh trang tru sac. -> 4. So sanh voi muc pin. -> 5. Soan tin nhan huong dan hoac goi doi xe sac pin di dong. |
-| Buoc ton thoi gian / loi nhat | Buoc 3-4, mat khoang 10-12 phut/luot vi phai tra cuu cheo giua ban do, dashboard tram sac va thong tin xe. |
-| AI ho tro o buoc nao | AI doc thong tin pin, vi tri, danh sach tram sac; draft de xuat an toan va tin nhan cho dispatcher duyet. |
-| Metric thanh cong | Giam thoi gian xu ly tu 15 phut xuong duoi 3 phut/luot; 100% case pin < 5% khong de xuat tram xa hon 5 km. |
-| Quick Architecture | LLM Feature + Rule guardrail. |
+---
 
-### Card 2 - Vinhomes: Phan loai phan anh cu dan
+# 🃏 Phase 2 — QUICK-ASSESS: 3 Quick Problem Cards (Cá nhân)
 
-| Truong | Noi dung |
-|---|---|
-| Bai toan | Cu dan gui phan anh qua app, nhan vien CSKH phai doc thu cong va chuyen dung bo phan xu ly. |
-| Cong ty thanh vien | Vinhomes |
-| Actor / Operator | Nhan vien CSKH, ban quan ly toa nha, cu dan. |
-| Workflow thu cong hien tai | 1. Cu dan gui ticket. -> 2. CSKH doc noi dung. -> 3. Xac dinh loai su co. -> 4. Gan phong ban va muc uu tien. -> 5. Draft phan hoi cho cu dan. |
-| Buoc ton thoi gian / loi nhat | Buoc 2-4, mat 6-10 phut/ticket; loi hay gap la route nham bo phan ky thuat, ve sinh, bao ve. |
-| AI ho tro o buoc nao | LLM phan loai ticket, trich xuat toa nha/can ho/van de, draft phan hoi dau tien. |
-| Metric thanh cong | 85% ticket duoc phan loai duoi 20 giay; giam route nham tu 12% xuong duoi 4%. |
-| Quick Architecture | LLM Feature co human review. |
+Chọn **top 3 bài toán** tiềm năng nhất từ danh sách trên để tiến hành đánh giá nhanh khả năng khả thi và thiết kế sơ bộ:
+- **Card #1:** Vinmec — Tóm tắt hồ sơ xuất viện (Discharge Summary)
+- **Card #2:** VinFast — Phân loại mã lỗi từ mô tả của khách hàng
+- **Card #3:** Vinpearl — Tự động hóa xử lý đặt phòng đoàn từ Email
 
-### Card 3 - Vinmec: Draft tom tat xuat vien
+---
 
-| Truong | Noi dung |
-|---|---|
-| Bai toan | Bac si phai tong hop nhieu nguon du lieu lam ban tom tat xuat vien ro rang cho benh nhan. |
-| Cong ty thanh vien | Vinmec |
-| Actor / Operator | Bac si dieu tri, dieu duong hanh chinh, benh nhan. |
-| Workflow thu cong hien tai | 1. Bac si mo EMR. -> 2. Doc chan doan, xet nghiem, thuoc. -> 3. Viet tom tat. -> 4. Kiem tra loi y khoa. -> 5. In/gui cho benh nhan. |
-| Buoc ton thoi gian / loi nhat | Buoc 2-3, mat 20-30 phut/benh nhan; de thieu loi dan dung thuoc hoac lich tai kham. |
-| AI ho tro o buoc nao | LLM tao ban nhap tom tat de bac si kiem tra va ky duyet. |
-| Metric thanh cong | Giam thoi gian draft tu 25 phut xuong duoi 8 phut; 100% ban cuoi co bac si duyet. |
-| Quick Architecture | LLM Feature, bat buoc HITL. |
+### ┌─────────────────────────────────────────────────────────────┐
+### │ QUICK PROBLEM CARD #1                                       │
+### │                                                             │
+### │ Bài toán: Bác sĩ tốn nhiều thời gian đọc và tổng hợp bệnh   │
+### │ án để viết tóm tắt hồ sơ xuất viện cho bệnh nhân khi ra viện.│
+### │ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+### │                     [x] Vinmec   [ ] Khác (Ghi rõ)________  │
+### │                                                             │
+### │ Ai đang đau (Actor)? Bác sĩ điều trị (quá tải hành chính)    │
+### │                      Bệnh nhân (phải chờ đợi thủ tục lâu)    │
+### │                                                             │
+### │ Workflow thủ công hiện tại (5 bước):                        │
+### │   1. Bệnh nhân có chỉ định ra viện                            │
+### │   ──> 2. Bác sĩ đọc toàn bộ bệnh án điện tử, kết quả xét nghiệm│
+### │   ──> 3. Trích xuất thông tin chính & gõ bản tóm tắt y khoa     │
+### │   ──> 4. Trưởng khoa duyệt hồ sơ xuất viện                    │
+### │   ──> 5. Nhân viên hành chính in hồ sơ và bàn giao cho khách  │
+### │                                                             │
+### │ Bước nào tốn thời gian/lỗi nhất? Bước 2-3 (⏱ 25 phút/lượt)  │
+### │ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 3                 │
+### │ (Tự động đọc EHR -> Trích xuất dữ liệu -> Draft bản tóm tắt)│
+### │                                                             │
+### │ Đo thành công bằng gì (Metric có số)?                        │
+### │ Giảm thời gian soạn thảo tóm tắt xuất viện từ 25 phút/lượt  │
+### │ ──> dưới 3 phút/lượt (bác sĩ chỉ cần kiểm tra và bấm duyệt). │
+### │                                                             │
+### │ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+### └─────────────────────────────────────────────────────────────┘
 
-## Lua chon top 1 de deep-dive
+---
 
-Nhom chon Card 1 - Xanh SM xu ly xe pin thap / su co sac pin, vi bai toan co tan suat cao, tac dong truc tiep den an toan van hanh, metric ro rang va phu hop voi prompt prototype da xay dung.
+### ┌─────────────────────────────────────────────────────────────┐
+### │ QUICK PROBLEM CARD #2                                       │
+### │                                                             │
+### │ Bài toán: Kỹ thuật viên/CSKH mất thời gian tra cứu mã lỗi    │
+### │ kỹ thuật chuẩn hóa từ mô tả ngôn ngữ tự nhiên của khách hàng.│
+### │ Công ty thành viên: [x] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+### │                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
+### │                                                             │
+### │ Ai đang đau (Actor)? Kỹ thuật viên chẩn đoán lỗi tại xưởng    │
+### │                      Điều phối viên tiếp nhận yêu cầu CSKH   │
+### │                                                             │
+### │ Workflow thủ công hiện tại (4 bước):                        │
+### │   1. Khách hàng mô tả lỗi xe bằng tiếng Việt qua App/Hotline  │
+### │   ──> 2. CSKH ghi nhận thông tin mô tả thô phi cấu trúc       │
+### │   ──> 3. Kỹ thuật viên đọc mô tả, tra cứu cẩm nang để tìm DTC │
+### │   ──> 4. Xác định mã lỗi chuẩn và tạo phiếu sửa chữa xưởng    │
+### │                                                             │
+### │ Bước nào tốn thời gian/lỗi nhất? Bước 3 (⏱ 15 phút/lượt)   │
+### │ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 3                 │
+### │ (Đọc mô tả thô -> Mapping với Vector Database -> Gợi ý mã) │
+### │                                                             │
+### │ Đo thành công bằng gì (Metric có số)?                        │
+### │ Giảm thời gian xác định mã lỗi ban đầu từ 15 phút ──> dưới │
+### │ 2 phút, với độ chính xác gợi ý TOP 3 mã lỗi đạt trên 92%.   │
+### │                                                             │
+### │ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+### └─────────────────────────────────────────────────────────────┘
+
+---
+
+### ┌─────────────────────────────────────────────────────────────┐
+### │ QUICK PROBLEM CARD #3                                       │
+### │                                                             │
+### │ Bài toán: Nhân viên đặt phòng phải đọc và nhập thủ công dữ   │
+### │ liệu booking đoàn phức tạp từ email vào hệ thống PMS Opera.  │
+### │ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+### │                     [ ] Vinmec   [x] Khác (Vinpearl)_______ │
+### │                                                             │
+### │ Ai đang đau (Actor)? Nhân viên phòng đặt phòng (Reservation)│
+### │                                                             │
+### │ Workflow thủ công hiện tại (5 bước):                        │
+### │   1. Nhận email đặt phòng đoàn kèm danh sách khách (Excel)   │
+### │   ──> 2. Đọc email, mở PMS đối chiếu kiểm tra quỹ phòng trống│
+### │   ──> 3. Nhập tay từng tên khách, ngày ở, loại phòng vào PMS │
+### │   ──> 4. Kiểm tra chéo tránh sai lệch thông tin nhập liệu     │
+### │   ──> 5. Gửi email xác nhận đặt phòng và hóa đơn tạm tính     │
+### │                                                             │
+### │ Bước nào tốn thời gian/lỗi nhất? Bước 3-4 (⏱ 35 phút/đoàn)  │
+### │ AI có thể nhảy vào hỗ trợ ở bước nào? Bước 3-4               │
+### │ (Trích xuất email/Excel thành JSON -> Gọi API tự động PMS)  │
+### │                                                             │
+### │ Đo thành công bằng gì (Metric có số)?                        │
+### │ Giảm thời gian xử lý một đoàn từ 35 phút ──> dưới 3 phút.    │
+### │                                                             │
+### │ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+### └─────────────────────────────────────────────────────────────┘
