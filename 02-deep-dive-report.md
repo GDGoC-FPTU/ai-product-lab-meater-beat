@@ -1,9 +1,11 @@
-Mai Việt Anh 2A202601083
-Nguyễn Quang Huy 2A202601873
-Trương Đình Khoa 2A202601297
-Vũ Quang Tùng 2A202601545
-Trần Tuấn Trung 2A202601769
-Lương Đăng Doanh 2A202601209
+| STT | Họ và Tên | MSSV |
+|---|---|---|
+| 1 | Mai Việt Anh | 2A202601083 |
+| 2 | Nguyễn Quang Huy | 2A202601873 |
+| 3 | Trương Đình Khoa | 2A202601297 |
+| 4 | Vũ Quang Tùng | 2A202601545 |
+| 5 | Trần Tuấn Trung | 2A202601769 |
+| 6 | Lương Đăng Doanh | 2A202601209 |
 # Báo cáo Phân tích Sâu: Dự án AI Smart Charging Emergency Dispatcher (Xanh SM)
 
 ---
